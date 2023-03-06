@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw66vrlomeq8h"]
+
+[ext_resource type="SpriteFrames" uid="uid://daowc2bkma77f" path="res://assets/Resources/player.tres" id="1_iavix"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_yw3se"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntyow"]
+size = Vector2(54, 38)
+
+[node name="Player" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 4
+z_index = 1
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_yw3se")
+jump_force = 700.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_iavix")
+animation = &"down"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 12)
+shape = SubResource("RectangleShape2D_ntyow")

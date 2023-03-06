@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ldm3itongqvf"]
+
+[ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_u2275"]
+[ext_resource type="Texture2D" uid="uid://bcdnvng1w0dff" path="res://assets/Sprites/Obstacles/barrel.png" id="2_5vgmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uorst"]
+size = Vector2(42, 40)
+
+[node name="Obstacle" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_u2275")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.166, 0.2)
+texture = ExtResource("2_5vgmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_uorst")

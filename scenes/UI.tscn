@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://k3bfsq74indd"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_uq040"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_71e7o"]
+action = &"restart"
+
+[sub_resource type="InputEventKey" id="InputEventKey_xjvbt"]
+keycode = 4194306
+
+[sub_resource type="Shortcut" id="Shortcut_41bex"]
+events = [SubResource("InputEventAction_71e7o"), SubResource("InputEventKey_xjvbt")]
+
+[node name="UI" type="Control"]
+process_mode = 3
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_uq040")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+offset_right = 61.0
+offset_bottom = 26.0
+pivot_offset = Vector2(1389, 326)
+text = "Score: 0"
+
+[node name="InputLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_right = 24.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "INPUT
+"
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -15.5
+offset_right = 32.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+shortcut = SubResource("Shortcut_41bex")
+text = "Restart
+"

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dham4qe2gd6g4"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_14gn7"]
+[ext_resource type="PackedScene" uid="uid://w5aj3t84bvtu" path="res://scenes/ground.tscn" id="2_1ay3u"]
+[ext_resource type="Texture2D" uid="uid://e0sdv2uiw6eg" path="res://assets/Backgrounds/background.png" id="2_dchat"]
+[ext_resource type="PackedScene" uid="uid://cw66vrlomeq8h" path="res://scenes/player.tscn" id="3_nmfpq"]
+[ext_resource type="PackedScene" uid="uid://cof6aan86pbwg" path="res://scenes/obstacle_spawner.tscn" id="4_yf1m8"]
+[ext_resource type="PackedScene" uid="uid://k3bfsq74indd" path="res://scenes/UI.tscn" id="5_tb8e5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_14gn7")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(576, 326)
+scale = Vector2(0.601599, 0.5)
+texture = ExtResource("2_dchat")
+
+[node name="Ground1" parent="." instance=ExtResource("2_1ay3u")]
+position = Vector2(576, 577)
+respawn_position = Vector2(1726, 577)
+
+[node name="Ground2" parent="." instance=ExtResource("2_1ay3u")]
+position = Vector2(1726, 577)
+respawn_position = Vector2(1726, 577)
+
+[node name="Player" parent="." instance=ExtResource("3_nmfpq")]
+position = Vector2(160, 472)
+jump_force = 550.0
+
+[node name="ObstacleSpawner" parent="." instance=ExtResource("4_yf1m8")]
+position = Vector2(1507, 500)
+
+[node name="UI" parent="." instance=ExtResource("5_tb8e5")]
+anchors_preset = 11
+anchor_left = 1.0
+offset_left = -1.0
+offset_right = 1152.0
+offset_bottom = 652.0
+grow_horizontal = 0
+size_flags_vertical = 1
+
+[node name="ScoreUpdateTimer" type="Timer" parent="."]
+autostart = true
